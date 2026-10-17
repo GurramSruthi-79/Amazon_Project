@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial;
+    background: #f3f3f3;
+}
+
+
+/* Header */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #131921;
+    color: white;
+    padding: 15px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.search input {
+    padding: 8px;
+    width: 300px;
+}
+
+
+/* Navigation */
+
+nav {
+    background: lch(47.78% 76.28 350.85);;
+    padding: 10px;
+}
+
+.menu {
+    display: flex;
+    gap: 20px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+}
+
+
+/* Toggle */
+
+.toggle {
+    display: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+
+/* Banner */
+
+.banner {
+    background: orange;
+    text-align: center;
+    padding: 40px;
+    color: white;
+}
+
+
+/* Products */
+
+.products {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.product {
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    width: 200px;
+    transition: transform 0.3s;
+    box-shadow: 0 8px 10px orangered;
+}
+
+.product:hover {
+    transform: scale(1.2);
+}
+
+.product img {
+    width: 150px;
+    height: 150px;
+}
+
+button {
+    background: orange;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #fb641b;
+}
+
+
+/* Footer */
+
+footer {
+    background: #131921;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+
+/* =========================
+   RESPONSIVE DESIGN
+   ========================= */
+
+@media (max-width: 600px) {
+
+    /* Header */
+
+    header {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .search {
+        width: 100%;
+    }
+
+    .search input {
+        width: 100%;
+    }
+
+
+    /* Toggle */
+
+    .toggle {
+        display: block;
+    }
+
+
+    /* Navigation */
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .menu {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+        padding-top: 15px;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+
+    /* Banner */
+
+    .banner {
+        padding: 25px 10px;
+    }
+
+    .banner h1 {
+        font-size: 25px;
+    }
+
+    .banner p {
+        font-size: 15px;
+    }
+
+
+    /* Products */
+
+    .products {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product {
+        width: 90%;
+        max-width: 300px;
+    }
+
+    .product:hover {
+        transform: none;
+    }
+
+}
+
+
+/* Tablet */
+
+@media (min-width: 601px) and (max-width: 900px) {
+
+    .search input {
+        width: 200px;
+    }
+
+    .products {
+        flex-wrap: wrap;
+    }
+
+}
+</style>
+
+</head>
+<body>
+    <!-- Header -->
+     <header>
+        <div class="logo">
+            Amazon
+        </div>
+        <div class="search">
+            <input type="text" placeholder="search products">
+        </div>
+     </header>
+     <!-- Navigation -->
+     <nav>
+        <div class="toggle" onclick="toggleMenu()">
+            #
+        </div>
+        <div class="menu.active" id="menu">
+            <a href="mobileModels.html">Mobiles</a>
+            <a href="laptopsModel.html">laptops</a>
+            <a href="electronic.html">Electronics</a>
+            <a href="fashion.html">Fashion</a>
+            <a href="books.html">Books</a>
+        </div>
+     </nav>
+     <!-- Banner -->
+      <div class="banner">
+        <h1>Welcome to Amazon</h1>
+        <p>Best Online Shopping Deals</p>
+      </div>
+      <!-- Products -->
+       <section class="products">
+        <div class="product">
+            <a href="#">
+                <img src="https://media.urbanwomania.com/wp-content/uploads/2023/12/Yellow-Banarasi-Saree-with-Embroidery-Work.webp">
+        <h3>Sarees</h3>
+        </a>
+        <p>2000</p>
+        <button onclick="addCart()">Add to cart</button>
+        </div>
+        <div class="product">
+            <a href="#">
+                <img src="https://cdn.shopify.com/s/files/1/0121/8376/5088/products/DSC4630.jpg?v=1580673080">
+        <h3>kurta sets</h3>
+        </a>
+        <p>500</p>
+        <button onclick="addCart()">Add to cart</button>
+        </div>
+        <div class="product">
+            <a href="#">
+            <img src="https://tse2.mm.bing.net/th/id/OIP.2bYH3cVtuh85o8QdXiCE1QHaLH?r=0&pid=Api&h=220&P=0">
+        <h3>westren</h3>
+        </a>
+        <p>1000</p>
+        <button onclick="addCart()">Add to cart</button>
+        </div>
+        <div class="product">
+            <a href="#">
+                <img src="https://designerblouse.co/blog/wp-content/uploads/2025/05/Trendy-Half-Saree-Blouse-Designs.jpg">
+        <h3>Hlaf sarees</h3>
+        </a>
+        <p>5000</p>
+        <button onclick="addCart()">Add to cart</button>
+        </div>
+        <div class="product">
+            <a href="#" >
+                <img src="https://anrobee.com/cdn/shop/files/blue-floral-one-piece-maxi-dress-for-women-pose.webp?v=1751687583">
+       <h3>maxi dresses</h3>   
+        </a>
+        <p>1500</p>
+        <button onclick="addCart()">Add to cart</button>
+        </div>
+        <div class="product">
+                <a href="#">
+                    <img src="https://i.pinimg.com/originals/0d/20/85/0d2085d884e971d37d7c98426069333f.jpg">
+            <h3>night wear</h3>   
+            </a>
+            <p>900</p>
+            <button onclick="addCart()">Add to cart</button>
+        </div>
+        </div>
+        </section>
+        <footer>
+            <p>2026 Amazon mini Clone</p>
+        </footer>
+</body>
+</html>  
+</body>
+</html>

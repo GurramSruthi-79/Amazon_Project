@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial;
+    background: #f3f3f3;
+}
+
+
+/* Header */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #131921;
+    color: white;
+    padding: 15px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.search input {
+    padding: 8px;
+    width: 300px;
+}
+
+
+/* Navigation */
+
+nav {
+    background: lch(47.78% 76.28 350.85);;
+    padding: 10px;
+}
+
+.menu {
+    display: flex;
+    gap: 20px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+}
+
+
+/* Toggle */
+
+.toggle {
+    display: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+
+/* Banner */
+
+.banner {
+    background: orange;
+    text-align: center;
+    padding: 40px;
+    color: white;
+}
+
+
+/* Products */
+
+.products {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.product {
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    width: 200px;
+    transition: transform 0.3s;
+    box-shadow: 0 8px 10px orangered;
+}
+
+.product:hover {
+    transform: scale(1.2);
+}
+
+.product img {
+    width: 150px;
+    height: 150px;
+}
+
+button {
+    background: orange;
+    border: none;
+    padding: 10px;
+    
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #fb641b;
+}
+
+
+/* Footer */
+
+footer {
+    background: #131921;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+
+/* =========================
+   RESPONSIVE DESIGN
+   ========================= */
+
+@media (max-width: 600px) {
+
+    /* Header */
+
+    header {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .search {
+        width: 100%;
+    }
+
+    .search input {
+        width: 100%;
+    }
+
+
+    /* Toggle */
+
+    .toggle {
+        display: block;
+    }
+
+
+    /* Navigation */
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .menu {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+        padding-top: 15px;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+
+    /* Banner */
+
+    .banner {
+        padding: 25px 10px;
+    }
+
+    .banner h1 {
+        font-size: 25px;
+    }
+
+    .banner p {
+        font-size: 15px;
+    }
+
+
+    /* Products */
+
+    .products {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product {
+        width: 90%;
+        max-width: 300px;
+    }
+
+    .product:hover {
+        transform: none;
+    }
+
+}
+
+
+/* Tablet */
+
+@media (min-width: 601px) and (max-width: 900px) {
+
+    .search input {
+        width: 200px;
+    }
+
+    .products {
+        flex-wrap: wrap;
+    }
+
+}
+</style>
+
+</head>
+<body>
+    <!-- Header -->
+     <header>
+        <div class="logo">
+            Amazon
+        </div>
+        <div class="search">
+            <input type="text" placeholder="search products">
+        </div>
+     </header>
+     <!-- Navigation -->
+     <nav>
+        <div class="toggle" onclick="toggleMenu()">
+            #
+        </div>
+        <div class="menu.active" id="menu">
+            <a href="mobileModels.html">Mobiles</a>
+            <a href="laptopsModel.html">laptops</a>
+            <a href="electronic.html">Electronics</a>
+            <a href="fashion.html">Fashion</a>
+            <a href="books.html">Books</a>
+        </div>
+     </nav>
+     <!-- Banner -->
+      <div class="banner">
+        <h1>Welcome to Amazon</h1>
+        <p>Best Online Shopping Deals</p>
+      </div>
+      <!-- Products -->
+     <section class="products">
+        <div class="product">
+            <a href="#">
+                <img src="https://images.pexels.com/photos/17720330/pexels-photo-17720330.jpeg?cs=srgb&dl=pexels-imthiyaz-syed-3018953-17720330.jpg&fm=jpg">
+        <h3>Mobile</h3>
+            </a>
+            <p>120000</p>
+            <button onclick="addCart()">Add to cart</button>
+        </div>
+       <div class="product">
+            <a href="#">
+                <img src="https://static.vecteezy.com/system/resources/thumbnails/035/546/654/small_2x/ai-generated-vibrant-display-high-performance-gaming-ai-generated-laptop-template-photo.jpg">
+        <h3>Laptop</h3>
+            </a>
+            <p>85000</p>
+            <button onclick="addCart()">Add to cart</button>
+            </div>
+            <div class="product">
+            <a href="#">
+                <img src="https://i.pinimg.com/originals/16/b0/3c/16b03c397e8fea06842c90c6e731cf39.jpg">
+        <h3>Watches</h3>
+            </a>
+            <p>2000</p>
+            <button onclick="addCart()">Add to cart</button>
+            </div>
+            <div class="product">
+            <a href="#">
+                <img src="https://images.pexels.com/photos/815494/pexels-photo-815494.jpeg?cs=srgb&dl=pexels-dzeninalukac-815494.jpg&fm=jpg">
+        <h3>Headphones</h3>
+            </a>
+            <p>1500</p>
+            <button onclick="addCart()">Add to cart</button>
+            </div>
+            <div class="product">
+            <a href="#" >
+                <img src="https://gowarranty.in/resources/images/about-us-img.png">
+       <h3>Households</h3>   
+            </a>
+            <p>1000-9999</p>
+            <button onclick="addCart()">Add to cart</button>
+            </div>
+            <div class="product">
+                <a href="#">
+                    <img src="https://hips.hearstapps.com/hmg-prod/images/best-power-banks-66a118430a88a.jpg">
+            <h3>powerbank</h3>   
+            </a>
+            <p>2000</p>
+            <button onclick="addCart()">Add to cart</button>
+        </div>
+        </div>
+        </section>
+        <footer>
+            <p>2026 Amazon mini Clone</p>
+        </footer>
+</body>
+</html>  
+</body>
+</html>

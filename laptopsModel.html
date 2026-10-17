@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial;
+    background: #f3f3f3;
+}
+
+
+/* Header */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #131921;
+    color: white;
+    padding: 15px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.search input {
+    padding: 8px;
+    width: 300px;
+}
+
+
+/* Navigation */
+
+nav {
+    background: lch(47.78% 76.28 350.85);;
+    padding: 10px;
+}
+
+.menu {
+    display: flex;
+    gap: 20px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+}
+
+
+/* Toggle */
+
+.toggle {
+    display: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+
+/* Banner */
+
+.banner {
+    background: orange;
+    text-align: center;
+    padding: 40px;
+    color: white;
+}
+
+
+/* Products */
+
+.products {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+.product {
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    width: 200px;
+    transition: transform 0.3s;
+    box-shadow: 0 8px 10px orangered;
+}
+
+.product:hover {
+    transform: scale(1.2);
+}
+
+.product img {
+    width: 150px;
+    height: 150px;
+}
+
+button {
+    background: orange;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #fb641b;
+}
+
+
+/* Footer */
+
+footer {
+    background: #131921;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+
+/* =========================
+   RESPONSIVE DESIGN
+   ========================= */
+
+@media (max-width: 600px) {
+
+    /* Header */
+
+    header {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .search {
+        width: 100%;
+    }
+
+    .search input {
+        width: 100%;
+    }
+
+
+    /* Toggle */
+
+    .toggle {
+        display: block;
+    }
+
+
+    /* Navigation */
+
+    nav {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .menu {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+        padding-top: 15px;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+
+    /* Banner */
+
+    .banner {
+        padding: 25px 10px;
+    }
+
+    .banner h1 {
+        font-size: 25px;
+    }
+
+    .banner p {
+        font-size: 15px;
+    }
+
+
+    /* Products */
+
+    .products {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product {
+        width: 90%;
+        max-width: 300px;
+    }
+
+    .product:hover {
+        transform: none;
+    }
+
+}
+
+
+/* Tablet */
+
+@media (min-width: 601px) and (max-width: 900px) {
+
+    .search input {
+        width: 200px;
+    }
+
+    .products {
+        flex-wrap: wrap;
+    }
+
+}
+</style>
+
+</head>
+<body>
+    <!-- Header -->
+     <header>
+        <div class="logo">
+            Amazon
+        </div>
+        <div class="search">
+            <input type="text" placeholder="search products">
+        </div>
+     </header>
+     <!-- Navigation -->
+     <nav>
+        <div class="toggle" onclick="toggleMenu()">
+            #
+        </div>
+        <div class="menu.active" id="menu">
+            <a href="mobileModels.html">Mobiles</a>
+            <a href="laptopsModel.html">laptops</a>
+            <a href="electronic.html">Electronics</a>
+            <a href="fashion.html">Fashion</a>
+            <a href="books.html">Books</a>
+        </div>
+     </nav>
+     <!-- Banner -->
+      <div class="banner">
+        <h1>Welcome to Amazon</h1>
+        <p>Best Online Shopping Deals</p>
+      </div>
+      <!-- Products -->
+       <section class="products">
+        <div class="product">
+            <a href="#">
+                <img src="https://www.digitaltrends.com/wp-content/uploads/2022/10/apple-macbook-pro-14-rear-view-e1666806673134.jpg?p=1">
+        <h3>Apple</h3>
+        </a>
+        <p>190000</p>
+        <button onclick="addCart()">Add to cart</button>
+        </div>
+        <div class="product">
+            <a href="#">
+                <img src="https://laptopmedia.com/wp-content/uploads/2024/09/04_IdeaPad_Slim_5_13_10_Polar_Blue_Hero_Rear_Facing_Right.jpeg">
+        <h3>Lenovo</h3>
+        </a>
+        <p>85000</p>
+        <button onclick="addCart()">Add to cart</button>
+        </div>
+        <div class="product">
+            <a href="#">
+            <img src="https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/notebooks/dell/dell-15-intel-3530/media-gallery/laptop-dell-dc15250nt-sl-metal-usbc-full-function-fpr-gallery-2.psd?fmt=png-alpha&pscan=auto&scl=1&hei=804&wid=1371&qlt=100,1&resMode=sharp2&size=1371,804&chrss=full">
+        <h3>Dell</h3>
+        </a>
+        <p>70000</p>
+        <button onclick="addCart()">Add to cart</button>
+        </div>
+        <div class="product">
+            <a href="#">
+                <img src="https://laptopmedia.com/wp-content/uploads/2023/05/aspire-3-spin-14-a3sp14-31pt-non-fingerprint-non-backlit-wallpaper-logo-pure-silver-02.tif-custom-scaled-e1683206573128.jpg">
+        <h3>Acer</h3>
+        </a>
+        <p>75000</p>
+        <button onclick="addCart()">Add to cart</button>
+        </div>
+        <div class="product">
+            <a href="#" >
+                <img src="https://sg-files.apjonlinecdn.com/landingpages/category-family/hp-laptops-family/images/w100_hero_mobile_v2.jpg">
+       <h3>Hp</h3>   
+        </a>
+        <p>80000</p>
+        <button onclick="addCart()">Add to cart</button>
+        </div>
+        <div class="product">
+                <a href="#">
+                    <img src="https://cdn.mos.cms.futurecdn.net/zBTcxtwtWhBVQjeNDpxSu8.jpg">
+            <h3>Macbook</h3>   
+            </a>
+            <p>250000</p>
+            <button onclick="addCart()">Add to cart</button>
+        </div>
+        </div>
+        </section>
+        <footer>
+            <p>2026 Amazon mini Clone</p>
+        </footer>
+</body>
+</html>  
+</body>
+</html>
